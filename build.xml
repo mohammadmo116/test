@@ -1,6 +1,6 @@
 <project default="compile">
-<property name="src" location="./"/>
-		<property name="result" location="../../target"/>
+<property name="src" location="./src/Software"/>
+		<property name="result" location="./target"/>
 		
 
 <target name="compile">
