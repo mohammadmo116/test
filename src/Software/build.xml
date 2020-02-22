@@ -1,0 +1,17 @@
+<project default="compile">
+<property name="src" location="./"/>
+		<property name="result" location="../../target"/>
+		
+
+<target name="compile">
+	
+<mkdir dir="${result}"/>
+		<javac srcdir="${src}"
+         destdir="${result}"
+         includeantruntime="false"
+         debug="true"/>
+			
+	
+			</target>
+
+</project>

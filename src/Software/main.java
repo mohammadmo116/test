@@ -1,8 +1,5 @@
 package Software;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
-
 public class main {
 
 	public static void main(String[] args) {
