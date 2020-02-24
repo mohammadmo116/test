@@ -17,7 +17,7 @@
 <!--matcher-->
 
 
-<pathelement location="./libra/hamcrest-2.2.jar"/>
+<pathelement location="./libra/hamcrest-core-1.3.jar"/>
 
 <!--<pathelement location="./UsedLibraries/jacocoant.jar"/>-->
 
