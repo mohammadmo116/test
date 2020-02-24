@@ -1,4 +1,4 @@
-package Software;
+package Software.java;
 
 public class Calculator {
 

@@ -1,17 +1,96 @@
+
 <project default="compile">
-<property name="src" location="./src/Software"/>
-		<property name="result" location="./target"/>
-		
+
+<property name="srcjava" location="./src/Software/java" />
+
+<property  name="srctest" location="./src/Software/Test"/>
+
+<property name="resultjava" location="./target/classes" />
+	
+<property name="resulttest" location="./target/test" />
+
+
+<path id="NecessaryLibraries">
+
+<pathelement location="./libra/junit-4.13.jar"/>
+
+<!--matcher-->
+
+
+<pathelement location="./libra/hamcrest-2.2.jar"/>
+
+<!--<pathelement location="./UsedLibraries/jacocoant.jar"/>-->
+
+
+</path>
+
 
 <target name="compile">
+
+<mkdir dir="${resultjava}"/>
+
+<javac includeantruntime="false" debug="true" destdir="${resultjava}" srcdir="${srcjava}"> </javac>
+
+</target>
+
+
+<target name="compile-testcases" depends="compile">
+
+<mkdir dir="${resulttest}"/>
+
+
+<javac includeantruntime="false" debug="true" destdir="${resulttest}" srcdir="${srctest}">
+
+
+<classpath>
+
+<path refid="NecessaryLibraries"/>
+
+<pathelement location="${resultjava}"/>
+
+</classpath>
+
+</javac>
+
+</target>
+
+
+<target name="test" depends="compile-testcases">
+
+<!--fork : each test will run in its own JVM (to seperate test cases)-->
+
+
+
+<junit fork="true" haltonfailure="true" printsummary="true">
 	
-<mkdir dir="${result}"/>
-		<javac srcdir="${src}"
-         destdir="${result}"
-         includeantruntime="false"
-         debug="true"/>
-			
+
+
+<classpath>
+
+<path refid="NecessaryLibraries"/>
+
+<pathelement location="${resultjava}"/>
+
+<pathelement location="${resulttest}"/>
+
+</classpath>
+
+<formatter usefile="false" type="brief"/>
+
+
+<batchtest>
+
+
+<fileset dir="${resulttest}">
+
+<include name="**/*Test.class"/>
+
+</fileset>
+
+</batchtest>
+
+</junit>
 	
-			</target>
+</target>
 
 </project>
