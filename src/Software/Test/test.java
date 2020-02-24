@@ -4,8 +4,6 @@ package Software.Test;
 
 
 import org.junit.*;
-
-
 import Software.java.Calculator;
 
 public class test{
