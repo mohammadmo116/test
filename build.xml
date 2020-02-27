@@ -10,7 +10,7 @@
 <property name="resulttest" location="./target/test" />
 
 
-<path id="NecessaryLibraries">
+<path id="libra">
 
 <pathelement location="./libra/junit-4.13.jar"/>
 
@@ -44,7 +44,7 @@
 
 <classpath>
 
-<path refid="NecessaryLibraries"/>
+<path refid="libra"/>
 
 <pathelement location="${resultjava}"/>
 
@@ -67,7 +67,7 @@
 
 <classpath>
 
-<path refid="NecessaryLibraries"/>
+<path refid="libra"/>
 
 <pathelement location="${resultjava}"/>
 
@@ -83,7 +83,7 @@
 
 <fileset dir="${resulttest}">
 
-<include name="**/*Test.class"/>
+<include name="**/*test.class"/>
 
 </fileset>
 
