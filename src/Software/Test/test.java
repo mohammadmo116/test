@@ -19,7 +19,7 @@ public class test{
 
 
 	double result=c.sum(a, b);
-Assert.assertTrue(result>0);
+Assert.assertTrue(result>50);
 	}
 	 
 	 
